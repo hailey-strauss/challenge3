@@ -4,6 +4,7 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "1234567890";
 var special = '!@#$%^&*()_+{}[]|\\/,./?:"';
+var finalCharacterPool = "";
 
 function generatePassword() {
   var pwLengthInput = prompt(
@@ -18,6 +19,14 @@ function generatePassword() {
 
   var isLowercase = confirm("Do you want tyour pw to contain lowercase chars");
   console.log(isLowercase);
+  // ask the rest of q's
+
+  console.log("before", finalCharacterPool);
+  if (isLowercase === true) {
+    finalCharacterPool = finalCharacterPool + lowercase;
+  }
+
+  console.log("aftyer", finalCharacterPool);
 }
 
 // Write password to the #password input
