@@ -24,9 +24,9 @@ function generatePassword() {
   var isLUppercase = confirm(
     "Do you want your pw to contain uppercase characters"
   );
-  
+
   console.log(isLUppercase);
-  var 
+  // var
   // ask the rest of q's
 
   console.log("before", finalCharacterPool);
