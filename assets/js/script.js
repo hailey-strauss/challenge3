@@ -17,8 +17,14 @@ function generatePassword() {
     return alert("wrong");
   }
 
-  var isLowercase = confirm("Do you want tyour pw to contain lowercase chars");
+  var isLowercase = confirm(
+    "Do you want tyour pw to contain lowercase characters"
+  );
   console.log(isLowercase);
+  var isLUppercase = confirm(
+    "Do you want your pw to contain uppercase characters"
+  );
+  console.log(isLUppercase);
   // ask the rest of q's
 
   console.log("before", finalCharacterPool);
