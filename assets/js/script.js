@@ -14,7 +14,8 @@ function generatePassword() {
   var passwordLength = Number(pwLengthInput);
 
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    return alert("wrong");
+    alert("wrong length");
+    return generatePassword();
   }
 
   var isLowercase = confirm(
