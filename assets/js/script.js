@@ -33,8 +33,11 @@ function generatePassword() {
   if (isLowercase === true) {
     finalCharacterPool = finalCharacterPool + lowercase;
   }
+  if (uppercase === true) {
+    finalCharacterPool = finalCharacterPool + uppercase;
+  }
 
-  console.log("aftyer", finalCharacterPool);
+  console.log("after", finalCharacterPool);
 }
 
 // Write password to the #password input
