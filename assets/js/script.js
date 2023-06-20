@@ -27,6 +27,11 @@ function generatePassword() {
   );
 
   console.log(isLUppercase);
+
+  var isspecial = confirm(
+    "Do you want your pw to conatin any special characters?"
+  );
+  console.log(isspecial);
   // var
   // ask the rest of q's
 
