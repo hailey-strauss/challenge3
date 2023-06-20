@@ -7,6 +7,15 @@ var special = '!@#$%^&*()_+{}[]|\\/,./?:"';
 var finalCharacterPool = "";
 
 function generatePassword() {
+  if (
+    isLUppercase == false &&
+    isLowercase == false &&
+    pwLengthInput == false &&
+    isspecial == false
+  ) {
+    alert("invalid entry - Please choose at least one criteria.");
+    return generatePassword();
+  }
   var pwLengthInput = prompt(
     "What length do you prefer your password to be? Please choose between 8 and 128 characters."
   );
@@ -63,9 +72,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+  return randPassword;
 }
-
-return randPassword;
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
