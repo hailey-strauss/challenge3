@@ -14,12 +14,21 @@ function generatePassword() {
   var passwordLength = Number(pwLengthInput);
 
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    alert("wrong length");
+    alert("Wrong length. Please enter a number between 8 and 128");
     return generatePassword();
   }
-
+  //An alert if user did not choose any criteria and returns to beginning prompt
+  if (
+    isLUppercase == false &&
+    isLowercase == false &&
+    pwLengthInput == false &&
+    isspecial == false
+  ) {
+    alert("invalid entry - Please choose at least one criteria.");
+    return generatePassword();
+  }
   var isLowercase = confirm(
-    "Do you want tyour pw to contain lowercase characters?"
+    "Do you want your pw to contain lowercase characters?"
   );
   console.log(isLUppercase);
   var isLUppercase = confirm(
@@ -32,8 +41,6 @@ function generatePassword() {
     "Do you want your pw to conatin any special characters?"
   );
   console.log(isspecial);
-  // var
-  // ask the rest of q's
 
   console.log("before", finalCharacterPool);
   if (isLowercase === true) {
