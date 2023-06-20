@@ -42,6 +42,9 @@ function generatePassword() {
   if (uppercase === true) {
     finalCharacterPool = finalCharacterPool + uppercase;
   }
+  if (special === true) {
+    finalCharacterPool = finalCharacterPool + special;
+  }
 
   console.log("after", finalCharacterPool);
 }
