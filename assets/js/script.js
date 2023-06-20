@@ -17,16 +17,7 @@ function generatePassword() {
     alert("Wrong length. Please enter a number between 8 and 128");
     return generatePassword();
   }
-  //An alert if user did not choose any criteria and returns to beginning prompt
-  if (
-    isLUppercase == false &&
-    isLowercase == false &&
-    pwLengthInput == false &&
-    isspecial == false
-  ) {
-    alert("invalid entry - Please choose at least one criteria.");
-    return generatePassword();
-  }
+
   var isLowercase = confirm(
     "Do you want your pw to contain lowercase characters?"
   );
@@ -54,6 +45,16 @@ function generatePassword() {
   }
 
   console.log("after", finalCharacterPool);
+}
+//An alert if user did not choose any criteria and returns to beginning prompt
+if (
+  isLUppercase == false &&
+  isLowercase == false &&
+  pwLengthInput == false &&
+  isspecial == false
+) {
+  alert("invalid entry - Please choose at least one criteria.");
+  return generatePassword();
 }
 
 // Write password to the #password input
