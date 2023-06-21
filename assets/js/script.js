@@ -46,34 +46,39 @@ function generatePassword() {
   if (isLowercase === true) {
     finalCharacterPool = finalCharacterPool + lowercase;
   }
-  if (uppercase === true) {
+  if (isLUppercase === true) {
     finalCharacterPool = finalCharacterPool + uppercase;
   }
-  if (special === true) {
+  if (isspecial === true) {
     finalCharacterPool = finalCharacterPool + special;
   }
 
   console.log("after", finalCharacterPool);
-}
-//An alert if user did not choose any criteria and returns to beginning prompt
-if (
-  isLUppercase == false &&
-  isLowercase == false &&
-  pwLengthInput == false &&
-  isspecial == false
-) {
-  alert("invalid entry - Please choose at least one criteria.");
-  return generatePassword();
-}
 
+  var randPassword = "";
+  for (let index = 0; index < pwLengthInput; index++) {
+    var randIndex = Math.floor(Math.random() * finalCharacterPool.length);
+    randPassword += finalCharacterPool[randIndex];
+  }
+  console.log(randPassword);
+  //An alert if user did not choose any criteria and returns to beginning prompt
+  if (
+    isLUppercase == false &&
+    isLowercase == false &&
+    pwLengthInput == false &&
+    isspecial == false
+  ) {
+    alert("invalid entry - Please choose at least one criteria.");
+    return generatePassword();
+  }
+  return randPassword;
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-  return randPassword;
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
